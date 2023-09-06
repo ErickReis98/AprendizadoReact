@@ -1,20 +1,13 @@
-import React, {useState} from 'react';
-import Login from './pages/Login';
+import React from 'react';
+import Routes from "./routes";
+
 import './global.css';
 
-function App() {
-
-  const [counter, setCounter] = useState(0);
 
 
-
-  function increment(){
-    setCounter (counter +1);
-  }
-
+export default function App() {
   return (
-   <Login/>
+   
+    <Routes/>
   );
 }
-
-export default App;
