@@ -2,7 +2,9 @@ import React from "react";
 import {BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Login from "./pages/Login";
-import Cliente from './pages/Cliente';
+import Cliente from './pages/Clientes';
+import NovoCliente from "./pages/NovoCliente";
+
 
 
 export default function AppRoutes() {
@@ -11,7 +13,8 @@ export default function AppRoutes() {
           <BrowserRouter>
             <Routes>
                 <Route path="/" exact element={<Login />} />
-                <Route path="/cliente" element={<Cliente />} />
+                <Route path="/clientes" element={<Cliente />} />
+                <Route path="/cliente/novo" element={<NovoCliente />} />
             </Routes>
           </BrowserRouter>
     );

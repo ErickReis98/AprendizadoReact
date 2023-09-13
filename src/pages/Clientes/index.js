@@ -5,13 +5,13 @@ import './styles.css';
 
 import logoImage from '../../assets/logo.svg'
 
-export default function Book(){
+export default function Clientes(){
     return (
     <div className = "cliente-container">
         <header>
             <img src = {logoImage} alt="Erudio"/>
             <span>Welcome, <strong>Erick</strong>!</span>
-            <Link className='button' to="cliente/new"> Adicionar novo cliente</Link>
+            <Link className='button' to="/cliente/novo"> Adicionar novo cliente</Link>
             <button type='button'>
                 <FiPower size={18} color="#251FC5" />
             </button>
