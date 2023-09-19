@@ -11,7 +11,7 @@ export default function NovoCliente() {
                 <section className="form">
                     <img src={logoImage} alt="Erudio" />
                     <h1>Adicionar novo Cliente</h1>
-                    <p>Adicione as informações do cliente e click em 'Adicionar'</p>
+                    <p>Adicione as informações do cliente e click em   'Adicionar'</p>
                     <Link className="back-link" to={"/clientes"}>
                         <FiArrowLeft size={16} color="251fc5" /> Voltar
                     </Link>
