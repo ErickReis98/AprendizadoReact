@@ -24,7 +24,7 @@ export default function Login() {
             const response = await api.post('auth/login', data);
 
             localStorage.setItem('username', username);
-            localStorage.setItem('accessToken', response.data.token);
+            localStorage.setItem('accessToken', response.data.Token);
 
             navigate('/clientes')
         } catch (err) {
@@ -59,5 +59,3 @@ export default function Login() {
         </div>
     )
 }
-
-
