@@ -37,7 +37,7 @@ export default function Login() {
             <section className="form">
                 <img src={logoImage} alt="Erudio Logo"/>
                 <form onSubmit={login}>
-                    <h1>Access your Account</h1>
+                    <h1>Entre na sua conta</h1>
                     <input
                         placeholder="Usuario"
                         value={username}
@@ -59,3 +59,5 @@ export default function Login() {
         </div>
     )
 }
+
+
