@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './styles.css';
 import logoImage from '../../assets/logo.svg'
 import padlock from '../../assets/padlock.png'
@@ -48,12 +48,15 @@ export default function Login() {
                         value={password}
                         onChange={e => setPassword(e.target.value)}
                     />
-
+                   
                     <button className="button" type="submit">Login</button>
                 </form>
-
+            <div>
+                <Link className='buttonCad' to="/auth/registerPerfil">
+                    Não tem cadastro ? Clique aqui para se cadastrar  </Link>                      
+              </div>
             </section>
-
+            
             <img src={padlock} alt="Login"/>
 
         </div>
