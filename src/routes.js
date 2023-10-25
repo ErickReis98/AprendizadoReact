@@ -13,9 +13,12 @@ export default function AppRoutes() {
         
           <BrowserRouter>
             <Routes>
+              {/* Rotas para Cliente */}
                 <Route path="/" exact element={<Login />} />
                 <Route path="/clientes" element={<Cliente />} />
-                <Route path="/cliente/novo" element={<NovoCliente />} />
+                <Route path="/cliente/novo/:clienteId" element={<NovoCliente />} />
+
+                {/* Rotas para Usuario */}
                 <Route path="/auth/registerPerfil" element ={<CadastroUsuario />} />
             </Routes>
           </BrowserRouter>

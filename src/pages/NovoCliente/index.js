@@ -15,12 +15,36 @@ export default function NovoCliente() {
     const [nome, setNome] = useState('');
     const [cpf, setCpf] = useState('');
 
-    const username = localStorage.getItem('username');
+    const {clienteId} = useParams();
+
     const token = localStorage.getItem('accessToken');
+
     
     const navigate = useNavigate();
 
-    async function criarNovoCliente(e){
+    async function carregarCliente(){
+        try {
+            const response = await api.get(`cliente/findId/${clienteId}`,{
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            })
+
+            setId(response.data.id);
+            setNome(response.data.nome);
+            setCpf(response.data.cpf);
+        } catch (error) {
+            alert("Erro ao inserir cliente.AA Confira os dados e tente novamente")
+            navigate("/clientes");
+        }
+    }
+
+    useEffect(() => {
+        if (clienteId === '0') return;
+        else carregarCliente();
+    }, [clienteId]);
+
+    async function salvarOuAlterar(e){
         e.preventDefault();
 
         const data = {
@@ -28,17 +52,26 @@ export default function NovoCliente() {
             cpf,
         }
 
+        {/* Na hora da cadastrar está dando erro, olhar o debug do vsCode e do STS */}
         try {
-            await api.post('cliente/cadastrar', data, {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
-            });
-            navigate('/clientes');
-            alert("Cliente cadastrado com sucesso");
+            if (clienteId === '0') {
+                await api.post('cliente/cadastrar', data, {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
+            } else {
+                data.id = id;
+                await api.put(`cliente/${clienteId}`, data, {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
+            }
 
-        } catch (error) {
-            alert("Erro ao cadastrar cliente. Tente novamente")
+            navigate('/clientes');
+        } catch (err) {
+            alert('Erro ao inserir cliente. Confira os dados e tente novamente')
         }
     }
     
@@ -49,12 +82,12 @@ export default function NovoCliente() {
                 <section className="form">
                     <img src={logoImage} alt="Erudio" />
                     <h1>Adicionar novo Cliente</h1>
-                    <p>Adicione as informações do cliente e click em   'Adicionar'</p>
+                    <p>Adicione as informações do cliente e clique em   'Adicionar'</p>{clienteId}
                     <Link className="back-link" to={"/clientes"}>
                         <FiArrowLeft size={16} color="251fc5" /> Voltar
                     </Link>
                 </section>
-                <form onSubmit={criarNovoCliente}>
+                <form onSubmit={salvarOuAlterar}>
                     <input 
                     value={nome}
                     onChange={e => setNome(e.target.value)}

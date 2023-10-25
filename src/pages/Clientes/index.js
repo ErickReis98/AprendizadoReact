@@ -18,6 +18,13 @@ export default function Clientes(){
         navigate("/");
     }
 
+    async function editarCliente(id){
+        try {
+        navigate(`/cliente/novo/${id}`);
+    } catch (error) {
+            alert('Erro ao editar. Tente novamente')
+        }
+    }
     async function deleteCliente(id){
         try {
             await api.delete(`/cliente/${id}`, {
@@ -27,7 +34,7 @@ export default function Clientes(){
             })
 
             setClientes(clientes.filter(cliente => cliente.id !== id))
-        } catch (err) {
+        } catch (error) {
             alert('Erro ao deletar. Tente novamente')
         }
     }
@@ -46,7 +53,7 @@ export default function Clientes(){
         <header>
             <img src = {logoImage} alt="Erudio"/>
             <span>Welcome, <strong>{username.toUpperCase()}</strong>!</span>
-            <Link className='button' to="/cliente/novo"> Adicionar novo cliente</Link>
+            <Link className='button' to="/cliente/novo/0"> Adicionar novo cliente</Link>
             <button onClick={() => logout()} type='button'>
                 <FiPower size={18} color="#251FC5" />
             </button>
@@ -63,7 +70,7 @@ export default function Clientes(){
                 <strong>Pedidos:</strong>
                 <p>{cliente.pedidos}</p>
 
-                <button type='button'>
+                <button onClick={() => editarCliente(cliente.id)}  type='button'>
                     <FiEdit size={20} color='#251FC5'/>
                 </button>
 
