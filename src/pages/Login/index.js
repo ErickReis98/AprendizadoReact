@@ -52,7 +52,7 @@ export default function Login() {
                     <button className="button" type="submit">Login</button>
                 </form>
             <div>
-                <Link className='buttonCad' to="/auth/registerPerfil">
+                <Link className='buttonCad' to="/cadastro/novoUsuario">
                     Não tem cadastro ? Clique aqui para se cadastrar  </Link>                      
               </div>
             </section>

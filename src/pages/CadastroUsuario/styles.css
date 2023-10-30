@@ -1,0 +1,79 @@
+.novo-usuario-container{
+    width: 100%;
+    max-width: 1180px;
+    padding:  0 30px;
+    margin: 32px auto;
+}
+
+.novo-usuario-container section.form{
+    width: 100%;
+    max-width: 350px;
+    margin-right: 30px;
+}
+
+.novo-usuario-container section.form img{
+    width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.novo-usuario-container.content{
+    width: 100%;
+    padding: 96px;
+    background: #F0F0f5;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.novo-usuario-container .content section{
+width: 100%;
+    max-width: 380px;
+}
+
+.novo-usuario-container section.form{
+    width: 100%;
+    max-width: 850px;
+    margin-right: 30px;
+    display: inline;
+}
+
+.novo-usuario-container section.form img{
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline;
+}
+
+.novo-usuario-container .content section h1{
+    margin: 64px 0 32px;
+    font-size: 32px; 
+    width: 70%;
+    float: right;
+    padding-right: 10%;
+}
+
+.novo-usuario-container .content section p{
+    font-size: 18px;
+    color: #737380;
+    line-height: 32px; 
+}
+
+.novo-usuario-container .content form{
+    width: 100%;
+    max-width: 800px;   
+    padding-left: 10%;
+    margin: 0 auto;
+}
+
+.novo-usuario-container .content form input{
+    margin-top: 8px;
+}
+
+.novo-usuario-container .content form  select{
+    margin-top: 8px;
+}

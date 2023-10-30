@@ -19,7 +19,7 @@ export default function AppRoutes() {
                 <Route path="/cliente/novo/:clienteId" element={<NovoCliente />} />
 
                 {/* Rotas para Usuario */}
-                <Route path="/auth/registerPerfil" element ={<CadastroUsuario />} />
+                <Route path="/cadastro/novoUsuario" element ={<CadastroUsuario />} />
             </Routes>
           </BrowserRouter>
     );

@@ -52,7 +52,7 @@ export default function NovoCliente() {
             cpf,
         }
 
-        {/* Na hora da cadastrar está dando erro, olhar o debug do vsCode e do STS */}
+       
         try {
             if (clienteId === '0') {
                 await api.post('cliente/cadastrar', data, {
@@ -81,8 +81,8 @@ export default function NovoCliente() {
             <div className="content">
                 <section className="form">
                     <img src={logoImage} alt="Erudio" />
-                    <h1>Adicionar novo Cliente</h1>
-                    <p>Adicione as informações do cliente e clique em   'Adicionar'</p>{clienteId}
+                    <h1>{clienteId === "0" ? "Adicionar novo" : "Alterar" } cliente</h1>
+                    <p>Adicione as informações do cliente e clique em   '{clienteId === "0" ? "Adicionar" : "Alterar" }'</p>
                     <Link className="back-link" to={"/clientes"}>
                         <FiArrowLeft size={16} color="251fc5" /> Voltar
                     </Link>
@@ -100,7 +100,7 @@ export default function NovoCliente() {
                     placeholder="CPF" 
                     type="text" />
 
-                    <button className="button" type="submit">Adicionar</button>
+                    <button className="button" type="submit">{clienteId === '0' ? 'Adicionar' : 'Alterar' }</button>
 
                 </form>
             </div>
