@@ -34,7 +34,7 @@ export default function NovoCliente() {
             setNome(response.data.nome);
             setCpf(response.data.cpf);
         } catch (error) {
-            alert("Erro ao inserir cliente.AA Confira os dados e tente novamente")
+            alert("Erro ao inserir cliente. Confira os dados e tente novamente")
             navigate("/clientes");
         }
     }

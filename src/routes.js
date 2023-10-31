@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import Cliente from './pages/Clientes';
 import NovoCliente from "./pages/NovoCliente";
 import CadastroUsuario from "./pages/CadastroUsuario";
+import CadastradoSucesso from "./pages/CadastroSucesso";
 
 
 
@@ -20,6 +21,7 @@ export default function AppRoutes() {
 
                 {/* Rotas para Usuario */}
                 <Route path="/cadastro/novoUsuario" element ={<CadastroUsuario />} />
+                <Route path="/cadastro/cadastradoSucesso" element ={<CadastradoSucesso/>} />
             </Routes>
           </BrowserRouter>
     );

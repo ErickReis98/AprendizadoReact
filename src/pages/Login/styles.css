@@ -31,3 +31,12 @@
     font-size: 32px;
     margin-bottom: 32px;
  }
+
+
+.login-container a:visited{
+    color: black;
+}
+
+a {
+    text-decoration: none;   
+}

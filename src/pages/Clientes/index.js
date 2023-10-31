@@ -52,7 +52,7 @@ export default function Clientes(){
     <div className = "cliente-container">
         <header>
             <img src = {logoImage} alt="Erudio"/>
-            <span>Welcome, <strong>{username.toUpperCase()}</strong>!</span>
+            <span>Bem vindo(a), &nbsp;<strong>{username.toUpperCase()}</strong>!</span>
             <Link className='button' to="/cliente/novo/0"> Adicionar novo cliente</Link>
             <button onClick={() => logout()} type='button'>
                 <FiPower size={18} color="#251FC5" />

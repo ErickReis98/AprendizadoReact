@@ -1,0 +1,33 @@
+.confirmado-container{
+    width: 100%;
+    max-width: 1180px;
+    padding:  0 30px;
+    margin: 32px auto;
+}
+
+.confirmado-container section.confirmado {
+    height: 70px;
+    width: 50%;
+    padding-top: 22px;
+    padding-left: 10%;
+    margin: auto;
+    
+    border-radius: 10px;
+    color: #9d9da5;
+}
+
+.confirmado-container section.home{
+    height: 50px;
+    width: 50%;
+    margin: auto;
+    padding-left: 18%;
+    
+}
+
+a {
+    text-decoration: none;
+    
+}
+.confirmado-container a:visited{
+    color: black;
+}
