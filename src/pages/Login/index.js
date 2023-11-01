@@ -26,7 +26,7 @@ export default function Login() {
             localStorage.setItem('username', username);
             localStorage.setItem('accessToken', response.data.Token);
 
-            navigate('/clientes')
+            navigate('/produtos')
         } catch (err) {
             alert('Falha no login. Tente novamente');
         }

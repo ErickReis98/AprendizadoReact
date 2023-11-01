@@ -1,9 +1,7 @@
 import React from "react";
 import './styles.css';
-import { useNavigate, Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FiHome } from 'react-icons/fi'
-import api from '../../Service/api'
-import logoImage from '../../assets/logo.svg'
 
 export default function CadastradoSucesso() {
 

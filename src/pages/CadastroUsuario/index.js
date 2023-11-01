@@ -42,15 +42,12 @@ export default function CadastroUsuario(){
 
        
         try {
-                await api.post('auth/registerPerfil', data);
-            {/* Arrumar a conclusão do cadastro de usuario e 
-            colocar uma página de confirmação de cadastro*/}
+            await api.post('auth/registerPerfil', data);
             navigate('/cadastro/cadastradoSucesso');
         } catch (err) {
             alert('Erro ao criar usuario. Confira os dados e tente novamente')
         }
     }
-
     return (
         <div className="novo-usuario-container">
             <div className="content">
