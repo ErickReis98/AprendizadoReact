@@ -17,15 +17,15 @@ export default function AppRoutes() {
       <Routes>
         <Route path="/" exact element={<Login />} />
        
+       {/* Rotas para Produto */}
         <Route path="/produtos" element={<Produto />} />
-        <Route path="/produtos/novo/:produtoId" element={<NovoProduto />} />
+        <Route path="/produto/novo/:produtoId" element={<NovoProduto />} />
 
         {/* Rotas para Cliente */}
 
         <Route path="/clientes" element={<Cliente />} />
         <Route path="/cliente/novo/:clienteId" element={<NovoCliente />} />
         
-
         {/* Rotas para Usuario */}
         <Route path="/cadastro/novoUsuario" element={<CadastroUsuario />} />
         <Route path="/cadastro/cadastradoSucesso" element={<CadastradoSucesso />} />

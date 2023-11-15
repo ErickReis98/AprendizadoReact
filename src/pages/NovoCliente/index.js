@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { useNavigate, Link, useParams } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi'
+import { IMaskInput } from "react-imask";
 
 import api from '../../Service/api'
 
@@ -44,6 +45,23 @@ export default function NovoCliente() {
         else carregarCliente();
     }, [clienteId]);
 
+    useEffect(() => {
+        var inputNome = document.querySelector("#nomeCliente");
+        inputNome.addEventListener("keypress", function(e) {
+            if(!checkChar(e)) {
+            e.preventDefault();
+        }
+        });
+        function checkChar(e) {
+            var char = String.fromCharCode(e.keyCode);
+        
+        console.log(char);
+            var pattern = '[a-zA-Z]';
+            if (char.match(pattern)) {
+            return true;
+        }
+        }
+    });
     async function salvarOuAlterar(e){
         e.preventDefault();
 
@@ -89,12 +107,14 @@ export default function NovoCliente() {
                 </section>
                 <form onSubmit={salvarOuAlterar}>
                     <input 
+                    id='nomeCliente'
                     value={nome}
                     onChange={e => setNome(e.target.value)}
                     placeholder="Nome" 
                     type="text" />
 
-                    <input 
+                    <IMaskInput 
+                    mask={"000.000.000-00"}
                     value={cpf}
                     onChange={e => setCpf(e.target.value)}
                     placeholder="CPF" 

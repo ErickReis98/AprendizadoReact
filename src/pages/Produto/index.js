@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import api from '../../Service/api'
 import { FiPower, FiEdit, FiTrash2 } from 'react-icons/fi'
 import './styles.css';
-
+import UINumber from "../../Components/UINumber";
 import logoImage from '../../assets/logo.svg';
 
 export default function Produtos() {
@@ -49,7 +49,8 @@ export default function Produtos() {
             setProdutos(response.data)
         })
     })
-    {/*Implementar a pagina de um novo produto*/}
+    
+
     return (
         <div className="produtos-container">
 
@@ -74,7 +75,7 @@ export default function Produtos() {
                 {produtos.map(produto => (                    
                     <tr key={produto.id}>
                             <td className="nome">{produto.nomeProduto}</td>
-                            <td className="preco">R$ {produto.preco}</td>
+                            <td className="preco"><UINumber>{produto.preco}</UINumber></td>
                             <td className="estoque">{produto.estoque}</td>
                             <td className="botoes"> 
                                 <button onClick={() => editarProduto(produto.id)} type='button'>
