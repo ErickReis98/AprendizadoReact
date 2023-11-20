@@ -6,7 +6,7 @@ import './styles.css';
 import logoImage from '../../assets/logo.svg';
 
 import api from '../../Service/api'
-import CurrencyInput from '../../Components/CurrencyInput';
+
 
 
 
@@ -134,9 +134,7 @@ export default function NovoProduto () {
       }
    
 
-    {/*Deixar o campo preço passando sempre double 
-        Arrumar o back end para receber a mascara de preco 
-        retirando R$ e trocando virgula por ponto
+    {/*
         arrumar a exibição do cpf dos cliente na página Clientes registrados
         E começar a implementar a página de pedidos */}
 
@@ -167,7 +165,7 @@ export default function NovoProduto () {
                     type="text"
                     placeholder="R$ 0,00"
                     value={preco}
-                    onChange={e => setPreco(e.target.value)}
+                    onChange={e => setPreco(e.target.value.trim())}
                     maxLength={12}
                     />
 

@@ -22,4 +22,4 @@ const CurrencyInput = ({ ...inputProps }) => {
   return <MaskedInput mask={currencyMask} {...inputProps} />
 }
  
-export default CurrencyInput
+export default CurrencyInput;

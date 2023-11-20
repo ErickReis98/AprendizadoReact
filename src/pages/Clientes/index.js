@@ -4,6 +4,7 @@ import { FiPower, FiEdit, FiTrash2} from 'react-icons/fi'
 import './styles.css';
 import api from '../../Service/api'
 import logoImage from '../../assets/logo.svg'
+import { cpfMask } from '../../Components/cpfMask';
 
 export default function Clientes(){
     const [clientes, setClientes] = useState([]);
@@ -66,7 +67,7 @@ export default function Clientes(){
                 <strong>Nome:</strong>
                 <p>{cliente.nome}</p>
                 <strong>CPF:</strong>
-                <p>{cliente.cpf}</p>
+                <p>{cpfMask(cliente.cpf)}</p>
                 <strong>Pedidos:</strong>
                 <p>{cliente.pedidos}</p>
 
