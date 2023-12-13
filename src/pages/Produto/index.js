@@ -5,6 +5,7 @@ import { FiPower, FiEdit, FiTrash2 } from 'react-icons/fi'
 import './styles.css';
 import UINumber from "../../Components/UINumber";
 import logoImage from '../../assets/logo.svg';
+import MenuBar from '../../Components/MenuBar';
 
 export default function Produtos() {
 
@@ -63,6 +64,8 @@ export default function Produtos() {
                 </button>
             </header>
 
+            <MenuBar />
+            
             <section className="sub-menus">
                 <h1>Produtos Registrados</h1>
                 

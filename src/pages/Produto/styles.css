@@ -49,9 +49,13 @@
     margin-bottom: 24px;
 }
 
+
 .produtos-container table{
     width: 80%;
     margin: auto;
+    border-radius: 15px;
+    padding: 10px 0px 10px 10px;
+    background-color: white;
 }
 
 .produtos-container tr{

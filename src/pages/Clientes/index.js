@@ -5,6 +5,7 @@ import './styles.css';
 import api from '../../Service/api'
 import logoImage from '../../assets/logo.svg'
 import { cpfMask } from '../../Components/cpfMask';
+import MenuBar from '../../Components/MenuBar';
 
 export default function Clientes(){
     const [clientes, setClientes] = useState([]);
@@ -26,7 +27,7 @@ export default function Clientes(){
             alert('Erro ao editar. Tente novamente')
         }
     }
-    async function deleteCliente(id){
+    async function deletarCliente(id){
         try {
             await api.delete(`/cliente/${id}`, {
                 headers: {
@@ -59,26 +60,26 @@ export default function Clientes(){
                 <FiPower size={18} color="#251FC5" />
             </button>
         </header>
-
+        <MenuBar />
         <h1>Clientes Registrados</h1>
         <ul>
             {clientes.map(cliente =>(
                 <li key={cliente.id}>
-                <strong>Nome:</strong>
-                <p>{cliente.nome}</p>
-                <strong>CPF:</strong>
-                <p>{cpfMask(cliente.cpf)}</p>
-                <strong>Pedidos:</strong>
-                <p>{cliente.pedidos}</p>
+                    <strong>Nome:</strong>
+                    <p>{cliente.nome}</p>
+                    <strong>CPF:</strong>
+                    <p>{cpfMask(cliente.cpf)}</p>
+                    <strong>Pedidos:</strong>
+                    <p>{cliente.pedidos}</p>
 
-                <button onClick={() => editarCliente(cliente.id)}  type='button'>
-                    <FiEdit size={20} color='#251FC5'/>
-                </button>
+                    <button onClick={() => editarCliente(cliente.id)}  type='button'>
+                        <FiEdit size={20} color='#251FC5'/>
+                    </button>
 
-                <button onClick={() => deleteCliente(cliente.id)} type='button' >
-                    <FiTrash2 size={20} color='#251FC5'/>
-                </button>
-            </li>
+                    <button onClick={() => deletarCliente(cliente.id)} type='button' >
+                        <FiTrash2 size={20} color='#251FC5'/>
+                    </button>
+                </li>
             ))}
             
         </ul>

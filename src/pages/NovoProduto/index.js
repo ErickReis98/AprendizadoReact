@@ -134,9 +134,7 @@ export default function NovoProduto () {
       }
    
 
-    {/*
-        arrumar a exibição do cpf dos cliente na página Clientes registrados
-        E começar a implementar a página de pedidos */}
+    
 
     return (
         <div className="novo-produto-container">
@@ -165,7 +163,7 @@ export default function NovoProduto () {
                     type="text"
                     placeholder="R$ 0,00"
                     value={preco}
-                    onChange={e => setPreco(e.target.value.trim())}
+                    onChange={e => setPreco(e.target.value)}
                     maxLength={12}
                     />
 

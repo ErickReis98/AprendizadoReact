@@ -8,7 +8,7 @@ import CadastroUsuario from "./pages/CadastroUsuario";
 import CadastradoSucesso from "./pages/CadastroSucesso";
 import Produto from "./pages/Produto";
 import NovoProduto from "./pages/NovoProduto";
-
+import Pedidos from "./pages/Pedidos";
 
 export default function AppRoutes() {
   return (
@@ -25,6 +25,9 @@ export default function AppRoutes() {
 
         <Route path="/clientes" element={<Cliente />} />
         <Route path="/cliente/novo/:clienteId" element={<NovoCliente />} />
+        
+        {/* Rotas para Pedidos */}    
+        <Route path="/pedidos" element={<Pedidos />} />
         
         {/* Rotas para Usuario */}
         <Route path="/cadastro/novoUsuario" element={<CadastroUsuario />} />
